@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-<title>اندیشه طلوع حرکت | مسیر شما تا هدف</title>
+<title>ATH Wellness & Movement Assessment | اندیشه طلوع حرکت</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -215,6 +215,67 @@
   .empty-state{text-align:center; padding:40px 10px; color:var(--cream-dim); font-size:13px;}
 
   ::selection{background:var(--gold); color:#241d08;}
+
+  /* ---------- ATH Assessment Engine — luxury enhancements ---------- */
+  .spotlight{position:absolute; top:-40px; left:50%; transform:translateX(-50%); width:340px; height:340px; background:radial-gradient(circle, rgba(212,175,55,.28), transparent 70%); filter:blur(10px); pointer-events:none; z-index:0;}
+  .gold-foil{background:linear-gradient(100deg, #a9812c 0%, #f0d68c 25%, #d4af37 50%, #f7e6a8 65%, #a9812c 100%); background-size:220% auto; -webkit-background-clip:text; background-clip:text; color:transparent; animation:foilShift 5s ease-in-out infinite;}
+  @keyframes foilShift{ 0%,100%{background-position:0% 50%;} 50%{background-position:100% 50%;} }
+
+  .brand-eyebrow{text-align:center; font-size:11px; letter-spacing:2px; color:var(--gold-soft); text-transform:uppercase; margin-bottom:2px; opacity:.85;}
+
+  /* checkbox-limit hint */
+  .limit-note{font-size:11px; color:var(--cream-dim); text-align:center; margin-top:4px;}
+
+  /* analyzing / transition screen */
+  .analyzing-wrap{display:flex; flex-direction:column; align-items:center; justify-content:center; padding:50px 10px 30px; text-align:center;}
+  .ring-orbit{position:relative; width:150px; height:150px; margin-bottom:26px;}
+  .ring-orbit img{position:absolute; inset:0; margin:auto; width:88px; height:88px; object-fit:contain; filter:drop-shadow(0 10px 28px rgba(212,175,55,.55));}
+  .ring{position:absolute; inset:0; border-radius:50%; border:1.5px solid rgba(212,175,55,.35); animation:ringPulse 2.2s ease-out infinite;}
+  .ring.r2{animation-delay:.7s;}
+  .ring.r3{animation-delay:1.4s;}
+  @keyframes ringPulse{ 0%{transform:scale(.55); opacity:.9;} 100%{transform:scale(1.4); opacity:0;} }
+  .analyzing-wrap h2{font-size:16px; color:var(--cream); margin:0 0 8px;}
+  .analyzing-wrap p{font-size:12.5px; color:var(--cream-dim); margin:0;}
+
+  /* result page */
+  .profile-badge-row{display:flex; justify-content:center; margin-bottom:16px;}
+  .profile-tag{font-size:11px; background:rgba(212,175,55,.14); border:1px solid rgba(212,175,55,.4); color:var(--gold-soft); padding:5px 16px; border-radius:20px; letter-spacing:.5px;}
+  .result-title{font-size:20px; font-weight:800; text-align:center; margin:6px 0 14px; line-height:1.6;}
+  .result-body{font-size:13.5px; line-height:2; color:var(--cream); text-align:center; margin-bottom:22px;}
+  .priority-list{display:flex; flex-direction:column; gap:10px; margin-bottom:22px;}
+  .priority-item{display:flex; align-items:center; gap:12px; background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:12px 16px;}
+  .priority-num{width:26px; height:26px; border-radius:50%; background:linear-gradient(135deg, var(--gold), var(--gold-soft)); color:#241d08; font-size:12px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .priority-item span:last-child{font-size:13.5px; color:var(--cream);}
+  .disclaimer-note{font-size:11px; color:var(--cream-dim); text-align:center; line-height:1.9; border-top:1px dashed rgba(255,255,255,.15); padding-top:14px; margin-bottom:20px;}
+  .barrier-card{background:linear-gradient(160deg, rgba(30,122,99,.16), rgba(255,255,255,.02)); border:1px solid rgba(30,122,99,.4); border-radius:16px; padding:16px 18px; margin-bottom:22px; text-align:center;}
+  .barrier-card p{margin:0; font-size:13px; line-height:2; color:var(--cream);}
+  .pathway-note{font-size:11.5px; color:var(--gold-soft); text-align:center; margin-top:10px; direction:rtl;}
+
+  /* body-data / visual results / club intro */
+  .gauge-row{display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-bottom:18px;}
+  .gauge-card{flex:1; min-width:130px; display:flex; flex-direction:column; align-items:center; background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:16px 10px;}
+  .gauge-wrap{position:relative; width:130px; height:130px;}
+  .gauge-svg{width:130px; height:130px;}
+  .gauge-svg circle{transition:stroke-dashoffset 1.1s cubic-bezier(.22,1,.36,1);}
+  .gauge-center{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;}
+  .gauge-center b{font-size:19px; color:var(--cream); line-height:1.2;}
+  .gauge-center span{font-size:10px; color:var(--cream-dim); letter-spacing:1px;}
+  .gauge-info{text-align:center; margin-top:10px;}
+  .gauge-cat{font-size:12px; font-weight:800; display:block; margin-bottom:6px;}
+  .gauge-info p{font-size:11px; line-height:1.8; color:var(--cream-dim); margin:0;}
+
+  .stat-mini-grid{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:18px;}
+  .stat-mini{flex:1; min-width:110px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:10px 12px; text-align:center;}
+  .stat-mini b{display:block; font-size:15px; color:var(--gold-soft);}
+  .stat-mini span{font-size:10.5px; color:var(--cream-dim);}
+
+  .club-intro-list{margin:0 0 16px; padding-right:20px; display:flex; flex-direction:column; gap:9px;}
+  .club-intro-list li{font-size:13px; line-height:1.8; color:var(--cream);}
+  .optin-row{display:flex; align-items:flex-start; gap:12px; background:rgba(212,175,55,.08); border:1px solid rgba(212,175,55,.3); border-radius:14px; padding:14px 16px; margin:16px 0 6px; cursor:pointer;}
+  .optin-row span:last-child{font-size:13px; line-height:1.8; color:var(--cream);}
+  .checkbox-lg{width:22px; height:22px; border-radius:7px; border:2px solid var(--gold); flex-shrink:0; position:relative; margin-top:2px; transition:background .2s;}
+  .checkbox-lg.checked{background:var(--gold);}
+  .checkbox-lg.checked::after{content:''; position:absolute; left:4px; top:1px; width:6px; height:11px; border:solid #241d08; border-width:0 2px 2px 0; transform:rotate(45deg);}
 </style>
 </head>
 <body>
@@ -230,246 +291,284 @@ window.LOGO_SRC = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaQAAAE+CAYAAAD
 </script>
 <script>
 /* =========================================================
-   اندیشه طلوع حرکت — فرم اختصاصی مشتریان جدید
+   ATH Wellness & Movement Assessment Engine
+   اندیشه طلوع حرکت — سیستم هوشمند نیازسنجی و پروفایل‌سازی
    ========================================================= */
 
 const CONFIG = {
   clubName: "اندیشه طلوع حرکت",
   signerName: "دکتر بهنام زایر",
-  signerRole: "باشگاه تندرستی و مشاوره ورزشی",
   whatsappNumber: "984433677430",
   telegramUsername: "nam366",
   offerValidityHours: 72,
   notifyEmail: "behnam.zayer@gmail.com",
 };
 
-// ---------- موانع شروع و پیشنهاد اختصاصی اعضای جدید ----------
-const OBSTACLES = [
-  { id: "time", label: "کمبود وقت" },
-  { id: "motivation", label: "بی‌انگیزگی برای شروع" },
-  { id: "cost", label: "هزینه‌ها" },
-  { id: "unknown", label: "نمی‌دانم از کجا شروع کنم" },
-  { id: "physical", label: "نگرانی جسمی یا آسیب قبلی" },
-  { id: "other", label: "دلیل دیگری دارم" },
-];
-
-const OFFERS = {
-  time: {
-    title: "برنامه‌ای متناسب با شلوغ‌ترین روزهای شما",
-    body: "بسته شروع با جلسات کوتاه و پرشدت (HIIT) و امکان رزرو آنلاین در هر ساعتی از شبانه‌روز — تناسب اندام باید با زندگی شما هماهنگ شود، نه برعکس.",
-    tags: ["جلسات کوتاه پرشدت", "رزرو آنلاین ۲۴ ساعته"],
+// ---------- محتوای ۵ پروفایل ----------
+const PROFILES = {
+  B: {
+    key: "B", title: "تناسب اندام و ترکیب بدنی",
+    body: "پاسخ‌های شما نشان می‌دهد تغییر در تناسب اندام و ترکیب بدنی یکی از مهم‌ترین اهداف شماست. با این حال، مسیر مؤثر فقط به «کم‌کردن وزن» محدود نمی‌شود؛ کیفیت حرکت، ظرفیت بدنی و قابلیت استمرار برنامه نیز اهمیت دارند.",
+    priorities: ["تناسب و ترکیب بدنی", "کیفیت حرکت", "قابلیت استمرار برنامه"],
+    offer: "ارزیابی ترکیب بدنی و مسیر تناسب اندام",
+    pathway: "ارزیابی وضعیت بدنی ← تعیین هدف ← برنامه متناسب ← پایش پیشرفت",
   },
-  motivation: {
-    title: "یک شروع قوی، با همراهی واقعی",
-    body: "یک هفته کامل تمرین آزمایشی رایگان همراه با مربی اختصاصی، به‌علاوه عضویت در چالش گروهی شروع تا هرگز تنها قدم برندارید.",
-    tags: ["۱ هفته آزمایشی رایگان", "چالش گروهی شروع"],
+  P: {
+    key: "P", title: "ظرفیت و عملکرد بدنی",
+    body: "هدف شما صرفاً ورزش‌کردن نیست؛ می‌خواهید بدن‌تان توانمندتر باشد — در قدرت، استقامت، ظرفیت حرکتی و عملکرد روزمره.",
+    priorities: ["قدرت و استقامت", "ظرفیت حرکتی", "عملکرد روزمره بهتر"],
+    offer: "ارزیابی ظرفیت و عملکرد بدنی",
+    pathway: "ارزیابی ظرفیت بدنی ← طراحی مسیر پیشرفت تدریجی",
   },
-  cost: {
-    title: "شروعی مقرون‌به‌صرفه، بدون افت کیفیت",
-    body: "بسته آشنایی ویژه اعضای جدید با ۳۰٪ تخفیف روی عضویت ماه اول — فرصتی برای تجربه واقعی مسیر، پیش از هر تصمیم بزرگ‌تر.",
-    tags: ["۳۰٪ تخفیف ماه اول", "بدون تعهد بلندمدت"],
+  M: {
+    key: "M", title: "حرکت و عملکرد بدنی",
+    body: "پاسخ‌های شما نشان می‌دهد کیفیت حرکت و وضعیت بدنی برای شما اهمیت بیشتری دارد. به نظر می‌رسد قبل از انتخاب یک برنامه تمرینی عمومی، شناخت بهتر وضعیت حرکتی و ظرفیت‌های بدنی شما می‌تواند نقطه شروع مناسب‌تری باشد.",
+    priorities: ["کیفیت حرکت", "وضعیت بدن", "افزایش ظرفیت بدنی"],
+    offer: "ارزیابی حرکتی و وضعیت بدن",
+    pathway: "ارزیابی حرکتی ← شناسایی الگوها ← برنامه اصلاحی ← پایش پیشرفت",
   },
-  unknown: {
-    title: "نقشه راه اختصاصی شما، رایگان",
-    body: "یک جلسه ارزیابی و مشاوره کاملاً رایگان با کارشناسان ما، تا دقیقاً بدانید از کجا و چگونه باید شروع کنید — قدم‌به‌قدم و بدون سردرگمی.",
-    tags: ["ارزیابی و مشاوره رایگان", "نقشه راه اختصاصی"],
+  L: {
+    key: "L", title: "سبک زندگی و ریکاوری",
+    body: "پاسخ‌های شما نشان می‌دهد مسئله اصلی احتمالاً فقط «تمرین بیشتر» نیست؛ بلکه ایجاد تعادل میان فعالیت، استراحت، خواب و عادات روزمره اهمیت بیشتری دارد.",
+    priorities: ["تعادل فعالیت و استراحت", "کیفیت خواب", "عادات روزمره سالم‌تر"],
+    offer: "برنامه سبک زندگی، فعالیت و ریکاوری",
+    pathway: "برنامه فعالیت ← عادات ← ریکاوری ← پیگیری",
   },
-  physical: {
-    title: "شروعی امن، با نظارت تخصصی",
-    body: "پیش از هر تمرینی، یک ارزیابی حرکتی تخصصی رایگان انجام می‌دهیم تا برنامه‌تان کاملاً متناسب با وضعیت بدنی و ایمن باشد.",
-    tags: ["ارزیابی حرکتی تخصصی رایگان", "برنامه ایمن و اصولی"],
-  },
-  other: {
-    title: "بیایید با هم گفتگو کنیم",
-    body: "یک گفتگوی صمیمانه و کاملاً رایگان با تیم ما، تا دقیقاً بفهمیم مسیر مناسب شما چیست — بدون هیچ تعهدی.",
-    tags: ["گفتگوی رایگان با تیم", "بدون تعهد اولیه"],
+  W: {
+    key: "W", title: "پیشگیری و ارتقای تندرستی",
+    body: "شما الزاماً به‌دنبال حل یک مشکل نیستید؛ می‌خواهید آنچه امروز دارید را حفظ کنید و ظرفیت بدنی خود را برای سال‌های آینده ارتقا دهید.",
+    priorities: ["پیشگیری از افت عملکرد", "حفظ ظرفیت بدنی", "ارتقای تندرستی بلندمدت"],
+    offer: "ارزیابی جامع تندرستی و ظرفیت‌سازی",
+    pathway: "ارزیابی جامع ← شناسایی نقاط قوت ← برنامه ظرفیت‌سازی ← پایش بلندمدت",
   },
 };
 
-// ---------- شواهد علمی و اجتماعی (صفحه مجزا، بعد از سؤالات) ----------
-const PROOF_FACTS = [
-  "تحقیقات نشان می‌دهد افرادی که با یک مربی یا برنامه ساختاریافته شروع می‌کنند، بسیار بیشتر از کسانی که تنها و بدون راهنما تمرین می‌کنند، به اهداف‌شان می‌رسند.",
-  "به‌طور میانگین شکل‌گیری یک عادت پایدار حدود ۶۶ روز زمان می‌برد — یعنی همین امروز شروع کنید تا تا پاییز، این مسیر بخشی از زندگی‌تان شده باشد.",
-  "همراهی گروهی و پیگیری منظم، احتمال پایبندی به برنامه ورزشی را به‌طور قابل‌توجهی افزایش می‌دهد.",
-  "ثبت و پیگیری هدف‌های کوچک و قابل‌اندازه‌گیری، انگیزه را در بلندمدت بسیار پایدارتر از تصمیم‌های بزرگ و ناگهانی نگه می‌دارد.",
+// ---------- محتوای موانع (Barrier Profile) ----------
+const BARRIERS = {
+  time:       { label: "کمبود زمان", message: "راه‌حل شما الزاماً تمرین بیشتر نیست؛ برنامه‌ای است که بتواند در زندگی واقعی شما جا بگیرد.", cta: "می‌خواهم مسیر متناسب با زمانم را پیدا کنم" },
+  planning:   { label: "نداشتن برنامه", message: "شاید مشکل شما انگیزه نباشد؛ نداشتن یک نقشه راه مشخص و گام‌به‌گام است.", cta: "می‌خواهم نقشه راه مشخصم را دریافت کنم" },
+  adherence:  { label: "عدم استمرار", message: "چالش اصلی شما احتمالاً شروع‌کردن نیست؛ ساختن سیستمی است که بتوانید ادامه‌اش دهید.", cta: "می‌خواهم مسیر قابل‌استمرار خودم را پیدا کنم" },
+  knowledge:  { label: "ندانستن از کجا شروع کنم", message: "شاید مشکل شما کمبود انگیزه نباشد؛ بلکه نداشتن نقطه شروع مشخص باشد.", cta: "می‌خواهم نقطه شروع مناسبم را پیدا کنم" },
+  safety:     { label: "نگرانی از آسیب", message: "قبل از انتخاب نوع تمرین، شناخت محدودیت‌ها و شرایط بدنی شما اهمیت بیشتری دارد.", cta: "می‌خواهم ابتدا ارزیابی شوم" },
+  experience: { label: "تجربه ناموفق قبلی", message: "شاید مسیرهای قبلی برای شرایط واقعی شما طراحی نشده بودند؛ این‌بار می‌توانیم از همان‌جا شروع کنیم که واقعاً به آن نیاز دارید.", cta: "می‌خواهم مسیری متفاوت را امتحان کنم" },
+  cost:       { label: "هزینه", message: "می‌شود مسیر درستی متناسب با شرایط شما پیدا کرد، بدون آنکه از کیفیت نتیجه بگذرید.", cta: "می‌خواهم گزینه‌های مناسب بودجه‌ام را ببینم" },
+  guidance:   { label: "نبود مربی یا همراه", message: "داشتن یک همراه و راهنمای متخصص، تفاوت بزرگی در ادامه‌دادن مسیر ایجاد می‌کند.", cta: "می‌خواهم یک همراه متخصص داشته باشم" },
+  necessity:  { label: "احساس نکردن ضرورت", message: "شاید هنوز فوریتی حس نمی‌کنید — کاملاً طبیعی است؛ گاهی فقط دیدن مسیر روشن، انگیزه واقعی می‌سازد.", cta: "می‌خواهم مسیرم را فقط ببینم" },
+};
+
+const SEVERITY_LABELS = [ {max:3,label:"پایین"}, {max:6,label:"متوسط"}, {max:8,label:"قابل توجه"}, {max:10,label:"بالا"} ];
+function severityLabel(v){ return (SEVERITY_LABELS.find(s=>v<=s.max)||SEVERITY_LABELS[3]).label; }
+
+const CLUB_SERVICES = [
+  "اتاق نمک",
+  "ارزیابی ساختار قامتی کاملاً الکترونیکی با دقت یک درجه",
+  "ارزیابی قوس‌های کف پا با دستگاه پیشرفته فورس‌پلیت",
+  "آنالیز ترکیب بدن",
+  "تمرینات ویژه ظرفیت‌سازی و سازگاری — برای اولین‌بار در ایران",
+  "تنیس روی میز و بازی‌های فکری",
+  "برنامه‌های کاهش وزن و آمادگی جسمانی",
+  "اصلاح و سازگاری ناهنجاری‌های ساختار قامتی",
 ];
 
-// ---------- مراحل فرم ----------
+const GENERAL_FACTS = [
+  "شاخص توده بدنی (BMI) و نسبت دور کمر به باسن (WHR) دو شاخص رایج علمی برای بررسی کلی ترکیب بدن هستند — هرچند هیچ‌کدام به‌تنهایی تصویر کامل را نشان نمی‌دهند.",
+  "کیفیت خواب به‌اندازه مدت آن اهمیت دارد؛ خواب ناکافی یا نامنظم می‌تواند روی ریکاوری، انرژی و حتی ترکیب بدن اثر بگذارد.",
+  "فعالیت بدنی منظم، حتی در حد متوسط، با بهبود توان عملکردی و کیفیت زندگی روزمره ارتباط مستقیم دارد.",
+];
+
+function readinessBucket(v){
+  if (v<=3) return "Awareness";
+  if (v<=6) return "Consideration";
+  if (v<=8) return "Intent";
+  return "Action";
+}
+function leadBucket(score){
+  if (score<40) return "Awareness";
+  if (score<70) return "Warm";
+  if (score<85) return "Hot";
+  return "Action Ready";
+}
+
+// ---------- تعریف مراحل ----------
 const STEPS = [
   { key: "welcome", type: "welcome" },
 
-  { key: "goal", type: "single", question: "مهم‌ترین هدف شما از شروع تمرین چیست؟",
+  { key: "experience", type: "multi", maxSelect: 2, question: "این روزها بیشتر با کدام‌یک از این موارد مواجه‌اید؟",
+    sub: "حداکثر ۲ گزینه انتخاب کنید.",
     options: [
-      { v: "کاهش وزن", l: "کاهش وزن" },
-      { v: "عضله‌سازی و قدرت", l: "عضله‌سازی و قدرت" },
-      { v: "رفع درد و مشکلات حرکتی", l: "رفع درد و مشکلات حرکتی" },
-      { v: "افزایش انرژی روزمره", l: "افزایش انرژی روزمره" },
-      { v: "آمادگی برای یک رویداد خاص", l: "آمادگی برای یک رویداد خاص" },
-      { v: "سلامت عمومی و پیشگیری", l: "سلامت عمومی و پیشگیری" },
+      { v:"energy", l:"کاهش انرژی" },
+      { v:"capacity", l:"ضعف یا کاهش توان بدنی" },
+      { v:"mobility", l:"محدودیت حرکتی" },
+      { v:"pain", l:"درد یا ناراحتی حرکتی" },
+      { v:"body", l:"تغییر نامطلوب در ترکیب بدنی" },
+      { v:"posture", l:"وضعیت نامناسب بدن" },
+      { v:"sleep", l:"مشکل در خواب یا ریکاوری" },
+      { v:"none", l:"مشکل خاصی ندارم" },
     ] },
 
-  { key: "activityLevel", type: "single", question: "سطح فعالیت بدنی شما در حال حاضر چگونه است؟",
+  { key: "goal", type: "single", question: "مهم‌ترین هدف شما از این مسیر چیست؟",
     options: [
-      { v: "تقریباً بی‌تحرک", l: "تقریباً بی‌تحرک" },
-      { v: "گاه‌به‌گاه فعال", l: "گاه‌به‌گاه فعال" },
-      { v: "منظم اما بدون نتیجه دلخواه", l: "منظم اما بدون نتیجه دلخواه" },
-      { v: "ورزشکار یا نسبتاً حرفه‌ای", l: "ورزشکار یا نسبتاً حرفه‌ای" },
+      { v:"body_comp", l:"تناسب و ترکیب بدنی" },
+      { v:"capacity", l:"قدرت، استقامت و ظرفیت بدنی" },
+      { v:"movement_quality", l:"کیفیت و آزادی حرکت" },
+      { v:"posture", l:"وضعیت بدن و الگوهای حرکتی" },
+      { v:"energy", l:"انرژی و سرزندگی" },
+      { v:"sleep", l:"خواب و ریکاوری" },
+      { v:"habits", l:"عادات سالم روزمره" },
+      { v:"prevention", l:"پیشگیری از افت عملکرد" },
     ] },
 
-  { key: "focusArea", type: "multi", optional: true, question: "کدام نواحی بدن برایتان اولویت دارد؟",
+  { key: "gap", type: "single", question: "فاصله وضعیت فعلی شما تا وضعیت مطلوب‌تان چقدر است؟",
+    options: [
+      { v:"very_low", l:"بسیار کم" },
+      { v:"low", l:"کم" },
+      { v:"notable", l:"قابل توجه" },
+      { v:"high", l:"زیاد" },
+      { v:"unknown", l:"نمی‌دانم" },
+    ] },
+
+  { key: "importance", type: "single", question: "این تغییر، این روزها چقدر برایتان اهمیت دارد؟",
+    options: [
+      { v:"energy", l:"انرژی و توان بیشتر" },
+      { v:"movement_quality", l:"کیفیت حرکت" },
+      { v:"body_comp", l:"تناسب اندام" },
+      { v:"future_decline", l:"نگرانی از افت توانایی در آینده" },
+      { v:"independence", l:"استقلال بدنی" },
+      { v:"habits", l:"عادات سالم" },
+      { v:"none", l:"نگرانی خاصی ندارم" },
+    ] },
+
+  { key: "impact", type: "rating", scale: 10, question: "وضعیت فعلی چقدر روی کیفیت زندگی روزمره‌تان اثر گذاشته؟",
+    lowLabel: "تقریباً بی‌تأثیر", highLabel: "تأثیر بسیار زیاد" },
+
+  { key: "desiredOutcome", type: "multi", question: "دوست دارید مسیر شما بیشتر چه نتیجه‌ای داشته باشد؟",
     sub: "می‌توانید بیش از یک گزینه انتخاب کنید.",
     options: [
-      { v: "شکم و پهلو", l: "شکم و پهلو" },
-      { v: "باسن و ران", l: "باسن و ران" },
-      { v: "بازو و شانه", l: "بازو و شانه" },
-      { v: "کمر و پشت", l: "کمر و پشت" },
-      { v: "تناسب کلی بدن", l: "تناسب کلی بدن" },
+      { v:"body_comp", l:"بدنی متناسب‌تر" },
+      { v:"capacity", l:"قدرت و استقامت بیشتر" },
+      { v:"movement_quality", l:"حرکتی روان‌تر" },
+      { v:"posture", l:"وضعیت بدنی بهتر" },
+      { v:"energy", l:"انرژی بیشتر" },
+      { v:"sleep", l:"خواب و ریکاوری بهتر" },
+      { v:"habits", l:"کنترل بهتر سبک زندگی" },
     ] },
 
-  { key: "timeframe", type: "single", question: "دوست دارید چه زمانی اولین نتایج را ببینید؟",
+  { key: "singleOutcome", type: "single", question: "اگر فقط اجازه داشتید یک نتیجه از این مسیر بگیرید، کدام را انتخاب می‌کنید؟",
+    sub: "این سؤال کمی سخت است — ولی پاسخ صادقانه‌تان برای ما بسیار ارزشمند است.",
     options: [
-      { v: "همین یک ماه", l: "همین یک ماه" },
-      { v: "طی ۳ ماه", l: "طی ۳ ماه" },
-      { v: "طی ۶ ماه", l: "طی ۶ ماه" },
-      { v: "فرقی نمی‌کند، فقط می‌خواهم شروع کنم", l: "فرقی نمی‌کند، فقط می‌خواهم شروع کنم" },
+      { v:"B", l:"تناسب و ترکیب بدنی" },
+      { v:"P", l:"قدرت و استقامت" },
+      { v:"M", l:"حرکتی روان‌تر و بدون درد" },
+      { v:"L", l:"انرژی و سبک زندگی بهتر" },
+      { v:"W", l:"پیشگیری و حفظ سلامت بلندمدت" },
     ] },
 
-  { key: "pastAttempt", type: "single", question: "تا امروز، برای رسیدن به این هدف چقدر تلاش کرده‌اید؟",
+  { key: "barrier", type: "single", question: "پس چرا هنوز شروع نکرده‌اید؟ بزرگ‌ترین مانع شما چیست؟",
+    sub: "پاسخ شما کاملاً محرمانه است.",
     options: [
-      { v: "بارها امتحان کرده و نتیجه نگرفته‌ام", l: "بارها امتحان کرده و نتیجه نگرفته‌ام" },
-      { v: "کمی امتحان کرده‌ام", l: "کمی امتحان کرده‌ام" },
-      { v: "اولین‌ بار است که جدی تصمیم گرفته‌ام", l: "اولین‌ بار است که جدی تصمیم گرفته‌ام" },
+      { v:"time", l:"کمبود زمان" },
+      { v:"planning", l:"نداشتن برنامه" },
+      { v:"adherence", l:"عدم استمرار در تلاش‌های قبلی" },
+      { v:"knowledge", l:"ندانستن از کجا شروع کنم" },
+      { v:"safety", l:"نگرانی از آسیب‌دیدگی" },
+      { v:"experience", l:"تجربه ناموفق قبلی" },
+      { v:"cost", l:"هزینه‌ها" },
+      { v:"guidance", l:"نبود مربی یا همراه" },
+      { v:"necessity", l:"احساس نکردن ضرورت" },
     ] },
 
-  { key: "obstacle", type: "single", question: "بزرگ‌ترین مانع شما برای شروع همین امروز چیست؟",
-    sub: "پاسخ شما کاملاً محرمانه است و فقط برای بهتر همراهی کردن شما استفاده می‌شود.",
-    options: OBSTACLES.map(o => ({ v: o.id, l: o.label })) },
+  { key: "readiness", type: "rating", scale: 10, question: "چقدر برای شروع این مسیر آماده‌اید؟",
+    lowLabel: "فقط کنجکاوم", highLabel: "کاملاً آماده‌ام" },
 
-  { key: "physicalFlag", type: "single", question: "آیا محدودیت جسمی یا سابقه آسیب‌دیدگی دارید که باید بدانیم؟",
+  { key: "bodyData", type: "bodyData" },
+
+  { key: "energyLevel", type: "rating", scale: 10, question: "سطح انرژی روزانه‌تان را چطور ارزیابی می‌کنید؟",
+    lowLabel: "بسیار کم", highLabel: "بسیار بالا" },
+
+  { key: "activityDays", type: "single", question: "چند روز در هفته فعالیت بدنی منظم دارید؟",
     options: [
-      { v: "بله", l: "بله" },
-      { v: "خیر", l: "خیر" },
-      { v: "مطمئن نیستم", l: "مطمئن نیستم" },
+      { v:"صفر", l:"صفر" }, { v:"۱ روز", l:"۱ روز" }, { v:"۲ تا ۳ روز", l:"۲ تا ۳ روز" }, { v:"بیشتر از ۳ روز", l:"بیشتر از ۳ روز" },
     ] },
 
-  { key: "trainingStyle", type: "single", question: "کدام سبک تمرین را ترجیح می‌دهید؟",
+  { key: "sleepQuality", type: "single", question: "کیفیت خواب شبانه‌تان چطور است؟",
     options: [
-      { v: "حضوری در باشگاه", l: "حضوری در باشگاه" },
-      { v: "آنلاین", l: "آنلاین" },
-      { v: "ترکیبی از هر دو", l: "ترکیبی از هر دو" },
-      { v: "هنوز مطمئن نیستم", l: "هنوز مطمئن نیستم" },
+      { v:"ضعیف", l:"ضعیف" }, { v:"متوسط", l:"متوسط" }, { v:"خوب", l:"خوب" }, { v:"عالی", l:"عالی" },
     ] },
 
-  { key: "futureSelf", type: "single", question: "تصور کنید سه ماه دیگر به هدفتان رسیده‌اید — بیشتر چه حسی خواهید داشت؟",
-    options: [
-      { v: "اعتمادبه‌نفس بیشتر", l: "اعتمادبه‌نفس بیشتر" },
-      { v: "سبک‌تر و سالم‌تر", l: "سبک‌تر و سالم‌تر" },
-      { v: "قوی‌تر و پرانرژی‌تر", l: "قوی‌تر و پرانرژی‌تر" },
-      { v: "آرام‌تر و بدون درد", l: "آرام‌تر و بدون درد" },
-    ] },
+  { key: "dailyCapacity", type: "rating", scale: 10, question: "توانایی انجام کارهای روزمره (مثل بالا رفتن از پله یا بلند کردن وسایل) را چطور ارزیابی می‌کنید؟",
+    lowLabel: "محدود", highLabel: "عالی" },
 
-  { key: "proofInterlude", type: "proof" },
+  { key: "visualResults", type: "visualResults" },
 
-  { key: "personalInfo", type: "personalInfo", question: "چند قدم تا برنامه اختصاصی شما باقی مانده",
+  { key: "analyzing", type: "analyzing" },
+  { key: "result", type: "result" },
+  { key: "clubIntro", type: "clubIntro" },
+  { key: "personalInfo", type: "personalInfo", question: "می‌خواهید این نتیجه را با شرایط واقعی خودتان دقیق‌تر بررسی کنیم؟",
     sub: "این اطلاعات فقط برای هماهنگی تیم ما با شما استفاده می‌شود و کاملاً محرمانه می‌ماند." },
-
-  { key: "contactPreference", type: "single", question: "ترجیح می‌دهید چگونه با شما تماس بگیریم؟",
-    options: [
-      { v: "تلفن", l: "تلفن" },
-      { v: "واتساپ", l: "واتساپ" },
-      { v: "پیامک", l: "پیامک" },
-    ] },
-
   { key: "bestTime", type: "single", question: "بهترین زمان برای تماس تیم ما با شما چه ساعتی از روز است؟",
     options: [
-      { v: "صبح", l: "صبح" },
-      { v: "ظهر", l: "ظهر" },
-      { v: "عصر", l: "عصر" },
-      { v: "شب", l: "شب" },
+      { v:"صبح", l:"صبح" }, { v:"ظهر", l:"ظهر" }, { v:"عصر", l:"عصر" }, { v:"شب", l:"شب" },
     ] },
 ];
 
 // ---------- state ----------
-const state = { stepIndex: 0, answers: {} };
+const state = { stepIndex: 0, answers: {}, scores: { B:0,P:0,M:0,L:0,W:0 } };
 const app = document.getElementById("app");
 
 function personName(){ return (state.answers.name || "").trim().split(" ")[0] || ""; }
-function progressPercent(){ return Math.min(100, Math.round((state.stepIndex / (STEPS.length - 1)) * 100)); }
+function totalSteps(){ return STEPS.length - 1; }
+function progressPercent(){ return Math.min(100, Math.round((state.stepIndex / totalSteps()) * 100)); }
 
 function render(){
   const step = STEPS[state.stepIndex];
   const pct = progressPercent();
   updateBrandGlow(pct);
   const isWelcome = step.type === "welcome";
+  const hideProgress = step.type === "analyzing" || step.type === "result";
 
   app.innerHTML = `
-    <div class="brandbar ${isWelcome?'hero':''}"><img id="logoImg" src="${window.LOGO_SRC}" alt="آرم اندیشه طلوع حرکت"></div>
-    <div class="brand-text"><b>باشگاه تندرستی و مشاوره ورزشی اندیشه طلوع حرکت</b></div>
-    <div class="progress-wrap">
-      <div class="progress-label"><span>مسیر شما تا هدف</span><span>${pct}%</span></div>
-      <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
+    <div class="brandbar ${isWelcome?'hero':''}" style="position:relative;">
+      ${isWelcome? '<div class="spotlight"></div>':''}
+      <img id="logoImg" src="${window.LOGO_SRC}" alt="آرم اندیشه طلوع حرکت" style="position:relative; z-index:1;">
     </div>
+    <div class="brand-eyebrow">ATH Wellness &amp; Movement Assessment</div>
+    <div class="brand-text"><b>باشگاه تندرستی و مشاوره ورزشی اندیشه طلوع حرکت</b></div>
+    ${hideProgress ? "" : `
+    <div class="progress-wrap">
+      <div class="progress-label"><span>مسیر ارزیابی شما</span><span>${pct}%</span></div>
+      <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
+    </div>`}
     <div class="stage"><div class="card" id="card">${renderStep(step)}</div></div>
   `;
   bindStepEvents(step);
+  if (step.type === "analyzing") runAnalyzing();
 }
 
 function renderStep(step){
   if (step.type === "welcome") return renderWelcome();
-  if (step.type === "personalInfo") return renderPersonalInfo(step);
   if (step.type === "single") return renderSingle(step);
   if (step.type === "multi") return renderMulti(step);
-  if (step.type === "proof") return renderProof();
+  if (step.type === "rating") return renderRating(step);
+  if (step.type === "bodyData") return renderBodyData();
+  if (step.type === "visualResults") return renderVisualResults();
+  if (step.type === "analyzing") return renderAnalyzing();
+  if (step.type === "result") return renderResult();
+  if (step.type === "clubIntro") return renderClubIntro();
+  if (step.type === "personalInfo") return renderPersonalInfo(step);
   return "";
 }
 
 function renderWelcome(){
   return `
-    <span class="eyebrow">به خانواده اندیشه طلوع حرکت خوش آمدید</span>
-    <h1 class="q">مسیر متحول‌شدن شما، از همین‌جا شروع می‌شود 🌿</h1>
+    <span class="eyebrow gold-foil" style="font-weight:800;">به خانواده اندیشه طلوع حرکت خوش آمدید</span>
+    <h1 class="q">ما به شما نمی‌گوییم چه مشکلی دارید؛<br>کمک می‌کنیم بفهمید از کجا شروع کنید 🌿</h1>
     <div class="welcome-msg">
-      <p>در کمتر از ۲ دقیقه، چند سؤال کوتاه از شما می‌پرسیم تا دقیقاً بشناسیم به چه چیزی نیاز دارید — و در پایان، یک برنامه و پیشنهاد کاملاً اختصاصی برایتان آماده می‌کنیم.</p>
+      <p>این ارزیابی کوتاه به شما کمک می‌کند اولویت واقعی مسیر تندرستی‌تان را بشناسید — و در پایان، یک بینش شخصی و پیشنهاد اختصاصی از تیم ما دریافت کنید.</p>
       <div class="sig"><span class="sig-name">با احترام، ${CONFIG.signerName}</span><div class="sig-line"></div></div>
     </div>
     <label class="field-note" style="display:block; margin-bottom:8px;">اسم کوچک‌تان را برایمان بنویسید</label>
     <input type="text" id="nameInput" placeholder="مثلاً: علی" value="${escapeHtml(state.answers.name||"")}">
-    <div class="nav-row"><button class="btn btn-primary" id="nextBtn" onclick="goNext()">شروع می‌کنم</button></div>
-  `;
-}
-
-function renderProof(){
-  const items = PROOF_FACTS.map(f => `<div class="science-item"><span class="science-icon">◆</span><p>${f}</p></div>`).join("");
-  return `
-    <span class="eyebrow">چرا این مسیر با ما متفاوت است</span>
-    <h1 class="q">${personName()?`${personName()} عزیز، `:""}شما تنها نیستید</h1>
-    <p class="sub">این‌ها یافته‌های علمی و تجربه واقعی هزاران نفری است که همین مسیر را طی کرده‌اند:</p>
-    <div class="science-list">${items}</div>
-    <div class="science-closing"><p>فقط چند قدم دیگر مانده تا برنامه و پیشنهاد ویژه اختصاصی شما آماده شود 🎁</p></div>
-    <div class="nav-row">
-      <button class="btn btn-ghost" onclick="goBack()">‹</button>
-      <button class="btn btn-primary" id="nextBtn" onclick="goNext()">ادامه می‌دهم</button>
-    </div>
-  `;
-}
-
-function renderPersonalInfo(step){
-  const a = state.answers;
-  return `
-    <span class="eyebrow">گام ${state.stepIndex} از ${STEPS.length-1}</span>
-    <h1 class="q">${step.question}</h1>
-    <p class="sub">${step.sub}</p>
-    <div style="display:flex; flex-direction:column; gap:12px;">
-      <input type="text" id="fullNameInput" placeholder="نام و نام خانوادگی" value="${escapeHtml(a.fullName||"")}">
-      <input type="number" id="ageInput" placeholder="سن" value="${escapeHtml(a.age||"")}" min="5" max="100">
-      <div class="options" id="genderWrap" style="flex-direction:row;">
-        ${["مرد","زن"].map(g=>`<div class="opt ${a.gender===g?'selected':''}" data-v="${g}" style="justify-content:center; flex:1;"><span>${g}</span></div>`).join("")}
-      </div>
-      <input type="tel" id="phoneInput" placeholder="شماره تماس" value="${escapeHtml(a.phone||"")}">
-    </div>
-    <div class="nav-row">
-      <button class="btn btn-ghost" onclick="goBack()">‹</button>
-      <button class="btn btn-primary" id="nextBtn" onclick="validatePersonalInfo()">ادامه</button>
-    </div>
+    <div class="nav-row"><button class="btn btn-primary" id="nextBtn" onclick="goNext()">شروع ارزیابی</button></div>
   `;
 }
 
@@ -479,8 +578,8 @@ function renderSingle(step){
     <div class="opt ${selected===o.v?'selected':''}" data-v="${escapeHtml(o.v)}"><span class="dot"></span><span>${escapeHtml(o.l)}</span></div>
   `).join("");
   return `
-    <span class="eyebrow">گام ${state.stepIndex} از ${STEPS.length-1}</span>
-    <h1 class="q">${personName()?`${personName()} عزیز، `:""}${step.question}</h1>
+    <span class="eyebrow">گام ${state.stepIndex} از ${totalSteps()}</span>
+    <h1 class="q">${step.question}</h1>
     ${step.sub?`<p class="sub">${step.sub}</p>`:""}
     <div class="options" id="optWrap">${opts}</div>
     <div class="nav-row">
@@ -496,7 +595,7 @@ function renderMulti(step){
     <div class="opt multi ${selected.includes(o.v)?'selected':''}" data-v="${escapeHtml(o.v)}"><span class="checkbox"></span><span>${escapeHtml(o.l)}</span></div>
   `).join("");
   return `
-    <span class="eyebrow">گام ${state.stepIndex} از ${STEPS.length-1}</span>
+    <span class="eyebrow">گام ${state.stepIndex} از ${totalSteps()}</span>
     <h1 class="q">${step.question}</h1>
     ${step.sub?`<p class="sub">${step.sub}</p>`:""}
     <div class="options" id="optWrap">${opts}</div>
@@ -507,23 +606,227 @@ function renderMulti(step){
   `;
 }
 
+function renderRating(step){
+  const max = step.scale || 10;
+  const selected = state.answers[step.key];
+  let pills = "";
+  for (let i=0; i<=max; i++){
+    pills += `<div class="pill ${selected===i?'selected':''}" data-v="${i}">${i}</div>`;
+  }
+  return `
+    <span class="eyebrow">گام ${state.stepIndex} از ${totalSteps()}</span>
+    <h1 class="q">${step.question}</h1>
+    <div class="rating-wrap" id="optWrap">${pills}</div>
+    <div class="rating-legend"><span>${step.lowLabel||""}</span><span>${step.highLabel||""}</span></div>
+    <div class="nav-row">
+      <button class="btn btn-ghost" onclick="goBack()">‹</button>
+      <button class="btn btn-primary" id="nextBtn" ${selected!==undefined?"":"disabled"} onclick="goNext()">ادامه</button>
+    </div>
+  `;
+}
+
+function renderAnalyzing(){
+  return `
+    <div class="analyzing-wrap">
+      <div class="ring-orbit">
+        <div class="ring"></div><div class="ring r2"></div><div class="ring r3"></div>
+        <img src="${window.LOGO_SRC}" alt="">
+      </div>
+      <h2 class="gold-foil" style="font-weight:800;">در حال تحلیل پاسخ‌های شما...</h2>
+      <p>در حال آماده‌سازی پروفایل اختصاصی شما هستیم</p>
+    </div>
+  `;
+}
+
+function runAnalyzing(){
+  computeScores();
+  setTimeout(()=>{ if (state.stepIndex < STEPS.length-1 && STEPS[state.stepIndex].type==="analyzing"){ state.stepIndex++; render(); } }, 2400);
+}
+
+function renderResult(){
+  const { primary, secondary, tie } = getPrimaryProfiles();
+  const p1 = PROFILES[primary];
+  const p2 = secondary ? PROFILES[secondary] : null;
+  const barrier = BARRIERS[state.answers.barrier] || BARRIERS.necessity;
+  const sev = severityLabel(state.answers.impact ?? 5);
+
+  const titleHtml = tie
+    ? `مسیر شما ترکیبی است: <span class="gold-foil">${p1.title}</span> + <span class="gold-foil">${p2.title}</span>`
+    : `اولویت فعلی شما: <span class="gold-foil">${p1.title}</span>`;
+
+  const bodyText = tie
+    ? `${p1.body} همچنین، ${p2.body}`
+    : p1.body;
+
+  const priorities = tie
+    ? Array.from(new Set([...p1.priorities.slice(0,2), ...p2.priorities.slice(0,1)])).slice(0,3)
+    : p1.priorities;
+
+  const priorityHtml = priorities.map((pr,i)=>`
+    <div class="priority-item"><span class="priority-num">${i+1}</span><span>${pr}</span></div>
+  `).join("");
+
+  return `
+    <div class="profile-badge-row"><span class="profile-tag">نتیجه ارزیابی شما آماده است</span></div>
+    <h1 class="result-title">${titleHtml}</h1>
+    <p class="result-body">${bodyText}</p>
+    <div class="priority-list">
+      <p class="field-note" style="text-align:center; margin-bottom:10px;">سه اولویت احتمالی شما:</p>
+      ${priorityHtml}
+    </div>
+    <div class="barrier-card">
+      <p>${barrier.message}</p>
+    </div>
+    <p class="disclaimer-note">این نتیجه تشخیص پزشکی نیست؛ بلکه یک پروفایل اولیه بر اساس پاسخ‌های شماست.<br>سطح اهمیت این موضوع برای شما: <b style="color:var(--gold-soft)">${sev}</b></p>
+    <div class="nav-row">
+      <button class="btn btn-primary" id="nextBtn" onclick="goNext()">${barrier.cta}</button>
+    </div>
+  `;
+}
+
+function renderPersonalInfo(step){
+  const a = state.answers;
+  return `
+    <span class="eyebrow">آخرین قدم</span>
+    <h1 class="q">${step.question}</h1>
+    <p class="sub">${step.sub}</p>
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <input type="text" id="fullNameInput" placeholder="نام و نام خانوادگی" value="${escapeHtml(a.fullName||"")}">
+      <input type="tel" id="phoneInput" placeholder="شماره تماس" value="${escapeHtml(a.phone||"")}">
+    </div>
+    <div class="nav-row">
+      <button class="btn btn-ghost" onclick="goBack()">‹</button>
+      <button class="btn btn-primary" id="nextBtn" onclick="validatePersonalInfo()">ادامه</button>
+    </div>
+  `;
+}
+
+function renderBodyData(){
+  const a = state.answers;
+  return `
+    <span class="eyebrow">اختیاری — دقت نتیجه را بیشتر می‌کند</span>
+    <h1 class="q">${personName()?`${personName()} عزیز، `:""}اگر مایل بودید، این اعداد را وارد کنید</h1>
+    <p class="sub">این بخش کاملاً اختیاری است — می‌توانید بدون تکمیل هم ادامه دهید.</p>
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <input type="number" id="heightInput" placeholder="قد (سانتی‌متر)" value="${escapeHtml(a.height||"")}">
+      <input type="number" id="weightInput" placeholder="وزن (کیلوگرم)" value="${escapeHtml(a.weight||"")}">
+      <input type="number" id="waistInput" placeholder="دور کمر (سانتی‌متر)" value="${escapeHtml(a.waist||"")}">
+      <input type="number" id="abdomenInput" placeholder="دور شکم (سانتی‌متر)" value="${escapeHtml(a.abdomen||"")}">
+      <input type="number" id="hipInput" placeholder="دور باسن (سانتی‌متر)" value="${escapeHtml(a.hip||"")}">
+    </div>
+    <div class="nav-row">
+      <button class="btn btn-ghost" onclick="goBack()">‹</button>
+      <button class="btn btn-primary" onclick="goNext()">ادامه</button>
+    </div>
+  `;
+}
+
+function computeBMI(){
+  const h = parseFloat(state.answers.height);
+  const w = parseFloat(state.answers.weight);
+  if (!h || !w) return null;
+  const m = h/100;
+  return w/(m*m);
+}
+function bmiCategory(bmi){
+  if (bmi < 18.5) return { label:"کم‌وزن", color:"#6fa8dc" };
+  if (bmi < 25) return { label:"طبیعی", color:"#4caf6d" };
+  if (bmi < 30) return { label:"اضافه‌وزن", color:"#e0a83e" };
+  return { label:"بالاتر از محدوده طبیعی", color:"#d9714e" };
+}
+function computeWHR(){
+  const waist = parseFloat(state.answers.waist);
+  const hip = parseFloat(state.answers.hip);
+  if (!waist || !hip) return null;
+  return waist/hip;
+}
+function whrCategory(whr){
+  if (whr < 0.85) return { label:"مطلوب", color:"#4caf6d" };
+  if (whr < 0.95) return { label:"متوسط", color:"#e0a83e" };
+  return { label:"نیازمند توجه بیشتر", color:"#d9714e" };
+}
+function gaugeSVG(percent, color){
+  const r = 54, c = 2*Math.PI*r;
+  const clamped = Math.max(2, Math.min(100, percent));
+  const offset = c * (1 - clamped/100);
+  return `<svg viewBox="0 0 130 130" class="gauge-svg">
+    <circle cx="65" cy="65" r="${r}" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="10"/>
+    <circle cx="65" cy="65" r="${r}" fill="none" stroke="${color}" stroke-width="10" stroke-linecap="round"
+      stroke-dasharray="${c}" stroke-dashoffset="${offset}" transform="rotate(-90 65 65)"/>
+  </svg>`;
+}
+
+function renderVisualResults(){
+  const bmi = computeBMI();
+  const whr = computeWHR();
+  let gaugesHtml = "";
+  if (bmi){
+    const cat = bmiCategory(bmi);
+    const pct = ((bmi-15)/(35-15))*100;
+    gaugesHtml += `<div class="gauge-card">
+      <div class="gauge-wrap">${gaugeSVG(pct, cat.color)}<div class="gauge-center"><b>${bmi.toFixed(1)}</b><span>BMI</span></div></div>
+      <div class="gauge-info"><span class="gauge-cat" style="color:${cat.color}">${cat.label}</span>
+      <p>شاخص توده بدنی، برآوردی کلی از نسبت وزن به قد است و به‌تنهایی تصویر کامل ترکیب بدن را نشان نمی‌دهد.</p></div>
+    </div>`;
+  }
+  if (whr){
+    const cat = whrCategory(whr);
+    const pct = ((whr-0.7)/(1.1-0.7))*100;
+    gaugesHtml += `<div class="gauge-card">
+      <div class="gauge-wrap">${gaugeSVG(pct, cat.color)}<div class="gauge-center"><b>${whr.toFixed(2)}</b><span>WHR</span></div></div>
+      <div class="gauge-info"><span class="gauge-cat" style="color:${cat.color}">${cat.label}</span>
+      <p>نسبت دور کمر به باسن، شاخصی از الگوی توزیع چربی بدن است که در مطالعات سلامت کاربرد دارد.</p></div>
+    </div>`;
+  }
+  const hasData = !!(bmi || whr);
+  const abdomenNote = state.answers.abdomen ? `<div class="stat-mini"><b>${escapeHtml(state.answers.abdomen)} سانتی‌متر</b><span>دور شکم</span></div>` : "";
+  const wellnessCards = `
+    <div class="stat-mini-grid">
+      ${state.answers.energyLevel!==undefined?`<div class="stat-mini"><b>${state.answers.energyLevel}/10</b><span>سطح انرژی روزانه</span></div>`:""}
+      ${state.answers.activityDays?`<div class="stat-mini"><b>${escapeHtml(state.answers.activityDays)}</b><span>فعالیت هفتگی</span></div>`:""}
+      ${state.answers.sleepQuality?`<div class="stat-mini"><b>${escapeHtml(state.answers.sleepQuality)}</b><span>کیفیت خواب</span></div>`:""}
+      ${state.answers.dailyCapacity!==undefined?`<div class="stat-mini"><b>${state.answers.dailyCapacity}/10</b><span>توان کارهای روزمره</span></div>`:""}
+      ${abdomenNote}
+    </div>`;
+  const generalFacts = !hasData ? `<div class="science-list">${GENERAL_FACTS.map(f=>`<div class="science-item"><span class="science-icon">◆</span><p>${f}</p></div>`).join("")}</div>` : "";
+
+  return `
+    <span class="eyebrow">تصویری از وضعیت امروز شما</span>
+    <h1 class="q">${personName()?`${personName()} عزیز، `:""}این خلاصه‌ای از پاسخ‌های شماست</h1>
+    ${hasData ? `<div class="gauge-row">${gaugesHtml}</div>` : `<p class="sub">این نکات کلی، مستقل از اعداد شخصی، همچنان برایتان مفید است:</p>`}
+    ${wellnessCards}
+    ${generalFacts}
+    <p class="disclaimer-note" style="margin-top:4px;">این اطلاعات جنبه آموزشی دارند و جایگزین ارزیابی تخصصی حضوری نیستند.</p>
+    <div class="nav-row">
+      <button class="btn btn-ghost" onclick="goBack()">‹</button>
+      <button class="btn btn-primary" onclick="goNext()">ادامه</button>
+    </div>
+  `;
+}
+
+function renderClubIntro(){
+  return `
+    <span class="eyebrow">درباره ما</span>
+    <h1 class="q">باشگاه تندرستی و مشاوره ورزشی اندیشه طلوع حرکت</h1>
+    <p class="sub" style="line-height:2;">«اندیشه طلوع حرکت» با بیش از ۱۲ سال تجربه میدانی و هزاران ارزیابی حرکتی و فیزیولوژیک، یک باشگاه تندرستی و مشاوره ورزشی است — نه یک باشگاه بدنسازی معمولی. امکانات و خدمات ما شامل:</p>
+    <ul class="club-intro-list">${CLUB_SERVICES.map(s=>`<li>${s}</li>`).join("")}</ul>
+    <p class="sub" style="line-height:2; margin-top:6px;">مسیر ما بر پایه علم و دانش روز، ظرفیت‌سازی و سازگاری حرکتی با طراحی برنامه‌های اختصاصی، با هدف رساندن شما به بهترین و ایده‌آل‌ترین شرایط شما بنا شده است.</p>
+    <div class="optin-row" id="optinRow">
+      <span class="checkbox-lg ${state.answers.wantsContact?'checked':''}" id="optinCheckbox"></span>
+      <span>مایلم تیم اندیشه طلوع حرکت با من تماس بگیرد و از خدمات این باشگاه استفاده کنم</span>
+    </div>
+    <div class="nav-row">
+      <button class="btn btn-ghost" onclick="goBack()">‹</button>
+      <button class="btn btn-primary" onclick="goNext()">ادامه</button>
+    </div>
+  `;
+}
+
 function bindStepEvents(step){
   if (step.type === "welcome"){
     const inp = document.getElementById("nameInput");
     inp.addEventListener("input", e => { state.answers.name = e.target.value; });
     inp.addEventListener("keydown", e => { if(e.key==="Enter") goNext(); });
-  }
-  if (step.type === "personalInfo"){
-    document.getElementById("fullNameInput").addEventListener("input", e=>{ state.answers.fullName = e.target.value; });
-    document.getElementById("ageInput").addEventListener("input", e=>{ state.answers.age = e.target.value; });
-    document.getElementById("phoneInput").addEventListener("input", e=>{ state.answers.phone = e.target.value; });
-    document.querySelectorAll("#genderWrap .opt").forEach(el=>{
-      el.addEventListener("click", ()=>{
-        state.answers.gender = el.getAttribute("data-v");
-        document.querySelectorAll("#genderWrap .opt").forEach(o=>o.classList.remove("selected"));
-        el.classList.add("selected");
-      });
-    });
   }
   if (step.type === "single"){
     document.querySelectorAll("#optWrap .opt").forEach(el=>{
@@ -542,9 +845,39 @@ function bindStepEvents(step){
         const v = el.getAttribute("data-v");
         const arr = state.answers[step.key];
         const idx = arr.indexOf(v);
-        if (idx === -1){ arr.push(v); el.classList.add("selected"); }
-        else { arr.splice(idx,1); el.classList.remove("selected"); }
+        if (idx === -1){
+          if (step.maxSelect && arr.length >= step.maxSelect){
+            const first = arr.shift();
+            document.querySelector(`#optWrap .opt[data-v="${first}"]`)?.classList.remove("selected");
+          }
+          arr.push(v); el.classList.add("selected");
+        } else { arr.splice(idx,1); el.classList.remove("selected"); }
       });
+    });
+  }
+  if (step.type === "rating"){
+    document.querySelectorAll("#optWrap .pill").forEach(el=>{
+      el.addEventListener("click", ()=>{
+        state.answers[step.key] = parseInt(el.getAttribute("data-v"),10);
+        document.querySelectorAll("#optWrap .pill").forEach(o=>o.classList.remove("selected"));
+        el.classList.add("selected");
+        document.getElementById("nextBtn").disabled = false;
+      });
+    });
+  }
+  if (step.type === "personalInfo"){
+    document.getElementById("fullNameInput").addEventListener("input", e=>{ state.answers.fullName = e.target.value; });
+    document.getElementById("phoneInput").addEventListener("input", e=>{ state.answers.phone = e.target.value; });
+  }
+  if (step.type === "bodyData"){
+    ["height","weight","waist","abdomen","hip"].forEach(f=>{
+      document.getElementById(f+"Input").addEventListener("input", e=>{ state.answers[f] = e.target.value; });
+    });
+  }
+  if (step.type === "clubIntro"){
+    document.getElementById("optinRow").addEventListener("click", ()=>{
+      state.answers.wantsContact = !state.answers.wantsContact;
+      document.getElementById("optinCheckbox").classList.toggle("checked", !!state.answers.wantsContact);
     });
   }
 }
@@ -560,6 +893,7 @@ function validatePersonalInfo(){
 function goNext(){
   const step = STEPS[state.stepIndex];
   if (step.type === "welcome" && !state.answers.name){ shake("nameInput"); return; }
+  if (step.type === "analyzing") return; // auto-advances
   if (state.stepIndex < STEPS.length - 1){
     state.stepIndex++;
     render();
@@ -569,8 +903,15 @@ function goNext(){
   }
 }
 function goBack(){
-  if (state.stepIndex > 0){ state.stepIndex--; render(); window.scrollTo({top:0, behavior:"smooth"}); }
+  if (state.stepIndex <= 0) return;
+  state.stepIndex--;
+  while (state.stepIndex > 0 && (STEPS[state.stepIndex].type === "analyzing" || STEPS[state.stepIndex].type === "result")){
+    state.stepIndex--;
+  }
+  render();
+  window.scrollTo({top:0, behavior:"smooth"});
 }
+
 function shake(id){
   const el = document.getElementById(id);
   if(!el) return;
@@ -587,15 +928,81 @@ function updateBrandGlow(pct){
   img.style.transform = pct >= 100 ? "scale(1.06)" : "scale(1)";
 }
 
+// ---------- موتور امتیازدهی ----------
+function computeScores(){
+  const s = { B:0,P:0,M:0,L:0,W:0 };
+  const a = state.answers;
+
+  // Q2 experience (+3/+4 each, up to 2 selections)
+  const expMap = { energy:["L",3], capacity:["P",3], mobility:["M",3], pain:["M",4], body:["B",4], posture:["M",3], sleep:["L",3], none:["W",4] };
+  (a.experience||[]).forEach(v=>{ const m=expMap[v]; if(m) s[m[0]]+=m[1]; });
+
+  // Q4 goal (+5/+6)
+  const goalMap = { body_comp:["B",6], capacity:["P",6], movement_quality:["M",6], posture:["M",6], energy:["L",6], sleep:["L",6], habits:["L",5], prevention:["W",6] };
+  if (a.goal && goalMap[a.goal]) { const m=goalMap[a.goal]; s[m[0]]+=m[1]; }
+
+  // Q5 gap multiplier — applied to scores accumulated so far (Q2+Q4)
+  const gapMult = { very_low:0.5, low:0.75, notable:1, high:1.25, unknown:0.85 };
+  const mult = gapMult[a.gap] ?? 1;
+  Object.keys(s).forEach(k => s[k] = s[k] * mult);
+
+  // Q6 importance (some dual-scored)
+  const impMap = {
+    energy: [["P",2],["L",2]],
+    movement_quality: [["M",3]],
+    body_comp: [["B",3]],
+    future_decline: [["W",3]],
+    independence: [["W",3],["P",2]],
+    habits: [["L",3]],
+    none: [["W",2]],
+  };
+  if (a.importance && impMap[a.importance]) impMap[a.importance].forEach(([k,v])=> s[k]+=v);
+
+  // Q8 desired outcome (multi, +5 each)
+  const outMap = { body_comp:["B",5], capacity:["P",5], movement_quality:["M",5], posture:["M",5], energy:["L",5], sleep:["L",5], habits:["L",5] };
+  (a.desiredOutcome||[]).forEach(v=>{ const m=outMap[v]; if(m) s[m[0]]+=m[1]; });
+
+  // Q9 single most important outcome (+8, direct profile mapping)
+  if (a.singleOutcome && s.hasOwnProperty(a.singleOutcome)) s[a.singleOutcome] += 8;
+
+  state.scores = s;
+}
+
+function getPrimaryProfiles(){
+  const s = state.scores;
+  const sorted = Object.entries(s).sort((x,y)=>y[1]-x[1]);
+  const primary = sorted[0][0];
+  const secondary = sorted[1][0];
+  const diff = sorted[0][1] - sorted[1][1];
+  return { primary, secondary, tie: diff < 5 };
+}
+
+function computeLeadScore(){
+  const severity = state.answers.impact ?? 5;
+  const readiness = state.answers.readiness ?? 5;
+  let score = (severity * 4) + (readiness * 4) + 10;
+  return Math.max(0, Math.min(100, Math.round(score)));
+}
+
 // ---------- ثبت نهایی و آفر ----------
 async function submitForm(){
   const record = { ...state.answers, timestamp: new Date().toISOString() };
+  const { primary, secondary, tie } = getPrimaryProfiles();
+  record.primaryProfile = primary;
+  record.secondaryProfile = secondary;
+  record.tie = tie;
+  record.leadScoreValue = computeLeadScore();
+  record.leadBucket = leadBucket(record.leadScoreValue);
+  record.readinessBucket = readinessBucket(state.answers.readiness ?? 5);
+
   sendSubmissionByEmail(record);
   renderOffer(record);
 }
 
 function renderOffer(record){
-  const offer = OFFERS[record.obstacle] || OFFERS.other;
+  const p1 = PROFILES[record.primaryProfile];
+  const p2 = record.secondaryProfile ? PROFILES[record.secondaryProfile] : null;
+  const offerText = record.tie && p2 ? `${p1.offer} + ${p2.offer}` : p1.offer;
   updateBrandGlow(100);
   const waText = buildSummaryText(record);
   const waLink = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(waText)}`;
@@ -604,16 +1011,16 @@ function renderOffer(record){
 
   app.innerHTML = `
     <div class="brandbar"><img id="logoImg" src="${window.LOGO_SRC}" alt="آرم اندیشه طلوع حرکت"></div>
+    <div class="brand-eyebrow">ATH Wellness &amp; Movement Assessment</div>
     <div class="brand-text"><b>باشگاه تندرستی و مشاوره ورزشی اندیشه طلوع حرکت</b></div>
     <div class="stage">
       <div class="card offer-wrap" id="offerCard">
         <div class="offer-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#241d08" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <p class="offer-title">تبریک، ${personName()||"همراه عزیز"}! برنامه شما آماده است 🌿</p>
-        <p class="offer-name">بر اساس پاسخ‌هایتان، این پیشنهاد ویژه اعضای جدید را برایتان آماده کردیم:</p>
+        <p class="offer-title">ممنون، ${personName()||"همراه عزیز"}! پیشنهاد اختصاصی شما آماده است 🌿</p>
+        <p class="offer-name">بر اساس پروفایل شما، این مسیر را پیشنهاد می‌کنیم:</p>
         <div class="offer-card">
-          <h3>${offer.title}</h3>
-          <p>${offer.body}</p>
-          <div class="offer-meta">${offer.tags.map(t=>`<span class="chip">${t}</span>`).join("")}</div>
+          <h3>${offerText}</h3>
+          <p class="pathway-note">${p1.pathway}</p>
           <div class="countdown-wrap">
             <span class="countdown-label">اعتبار این پیشنهاد:</span>
             <span class="countdown-timer" id="countdownTimer">--:--:--</span>
@@ -624,7 +1031,7 @@ function renderOffer(record){
           <a class="btn btn-telegram" href="${tgLink}" target="_blank" rel="noopener">گفتگو در تلگرام</a>
           <button class="btn btn-outline" onclick="copySummary(this)">کپی خلاصه گفتگو</button>
         </div>
-        <p class="field-note" style="margin-top:16px;">تیم ما در بازه «${record.bestTime||"زمان مناسب شما"}» از طریق «${record.contactPreference||"روش مناسب شما"}» با شما تماس خواهد گرفت.</p>
+        <p class="field-note" style="margin-top:16px;">تیم ما در بازه «${record.bestTime||"زمان مناسب شما"}» با شما تماس خواهد گرفت.</p>
       </div>
     </div>
   `;
@@ -648,22 +1055,21 @@ function startCountdown(expiresAt){
 }
 
 function buildSummaryText(r){
-  const obstacleLabel = (OBSTACLES.find(o=>o.id===r.obstacle)||{}).label || "";
+  const p1 = PROFILES[r.primaryProfile];
+  const barrier = BARRIERS[r.barrier] || {};
   return [
     `سلام، من ${r.fullName||r.name} هستم.`,
-    `سن: ${r.age||"-"} · جنسیت: ${r.gender||"-"}`,
-    `هدف اصلی: ${r.goal||"-"}`,
-    `سطح فعالیت فعلی: ${r.activityLevel||"-"}`,
-    `بازه زمانی مدنظر: ${r.timeframe||"-"}`,
-    `بزرگ‌ترین مانع شروع: ${obstacleLabel}`,
-    `سبک تمرین ترجیحی: ${r.trainingStyle||"-"}`,
-    `ترجیح تماس: ${r.contactPreference||"-"} · بهترین زمان: ${r.bestTime||"-"}`,
+    `پروفایل اصلی: ${p1.title}`,
+    `مانع اصلی: ${barrier.label||"-"}`,
+    `بهترین زمان تماس: ${r.bestTime||"-"}`,
     `شماره تماس: ${r.phone||"-"}`,
   ].filter(Boolean).join("\n");
 }
 
 function copySummary(btn){
-  const text = buildSummaryText(state.answers);
+  const { primary, secondary, tie } = getPrimaryProfiles();
+  const record = { ...state.answers, primaryProfile: primary, secondaryProfile: secondary, tie };
+  const text = buildSummaryText(record);
   navigator.clipboard.writeText(text).then(()=>{
     const old = btn.textContent;
     btn.textContent = "کپی شد ✓";
@@ -688,23 +1094,31 @@ function escapeHtml(s){
 }
 
 async function sendSubmissionByEmail(record){
-  const obstacleLabel = (OBSTACLES.find(o=>o.id===record.obstacle)||{}).label || "-";
+  const p1 = PROFILES[record.primaryProfile];
+  const p2 = record.secondaryProfile ? PROFILES[record.secondaryProfile] : null;
+  const barrier = BARRIERS[record.barrier] || {};
+  const bmi = computeBMI();
+  const whr = computeWHR();
   const payload = {
-    _subject: `درخواست عضویت جدید — ${record.fullName || record.name || "بدون‌نام"}`,
+    _subject: `سرنخ جدید ATH Assessment — ${record.fullName || record.name || "بدون‌نام"} [${record.leadBucket}]${record.wantsContact?" ★ درخواست تماس":""}`,
     "نام": record.fullName || record.name || "-",
-    "سن": record.age || "-",
-    "جنسیت": record.gender || "-",
     "شماره تماس": record.phone || "-",
-    "هدف اصلی": record.goal || "-",
-    "سطح فعالیت فعلی": record.activityLevel || "-",
-    "نواحی اولویت‌دار": (record.focusArea||[]).join("، ") || "-",
-    "بازه زمانی مدنظر": record.timeframe || "-",
-    "تلاش‌های قبلی": record.pastAttempt || "-",
-    "بزرگ‌ترین مانع شروع": obstacleLabel,
-    "محدودیت جسمی": record.physicalFlag || "-",
-    "سبک تمرین ترجیحی": record.trainingStyle || "-",
-    "تصویر آینده مطلوب": record.futureSelf || "-",
-    "ترجیح تماس": record.contactPreference || "-",
+    "درخواست صریح تماس از باشگاه": record.wantsContact ? "بله" : "خیر / مشخص نکرده",
+    "پروفایل اصلی": `${record.primaryProfile} — ${p1.title}`,
+    "پروفایل ثانویه": record.tie && p2 ? `${record.secondaryProfile} — ${p2.title}` : "-",
+    "امتیازهای خام (B/P/M/L/W)": `B:${state.scores.B.toFixed(1)} P:${state.scores.P.toFixed(1)} M:${state.scores.M.toFixed(1)} L:${state.scores.L.toFixed(1)} W:${state.scores.W.toFixed(1)}`,
+    "مانع اصلی": barrier.label || "-",
+    "شدت نیاز (Q7)": `${record.impact ?? "-"} — ${severityLabel(record.impact ?? 5)}`,
+    "آمادگی (Q13)": `${record.readiness ?? "-"} — ${record.readinessBucket}`,
+    "Lead Score (داخلی، فقط برای تیم فروش)": `${record.leadScoreValue} — ${record.leadBucket}`,
+    "قد/وزن": `${record.height||"-"} سانتی‌متر / ${record.weight||"-"} کیلوگرم`,
+    "BMI": bmi ? `${bmi.toFixed(1)} — ${bmiCategory(bmi).label}` : "-",
+    "دور کمر/شکم/باسن": `${record.waist||"-"} / ${record.abdomen||"-"} / ${record.hip||"-"} سانتی‌متر`,
+    "WHR": whr ? `${whr.toFixed(2)} — ${whrCategory(whr).label}` : "-",
+    "سطح انرژی روزانه": record.energyLevel ?? "-",
+    "فعالیت هفتگی": record.activityDays || "-",
+    "کیفیت خواب": record.sleepQuality || "-",
+    "توان کارهای روزمره": record.dailyCapacity ?? "-",
     "بهترین زمان تماس": record.bestTime || "-",
     "زمان ثبت": new Date(record.timestamp).toLocaleString("fa-IR"),
     _template: "table",
