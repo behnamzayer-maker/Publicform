@@ -127,7 +127,7 @@
   .science-closing{background:linear-gradient(160deg, rgba(212,175,55,.14), rgba(255,255,255,.02)); border:1px solid rgba(212,175,55,.35); border-radius:14px; padding:14px 16px; margin-bottom:4px;}
   .science-closing p{margin:0; font-size:13px; line-height:1.9; color:var(--gold-soft); text-align:center;}
 
-  input[type=text], input[type=tel], textarea{
+  input[type=text], input[type=tel], input[type=number], textarea{
     width:100%; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.16);
     border-radius:14px; padding:14px 16px; color:var(--cream); font-family:inherit; font-size:15px;
     outline:none; transition:border-color .2s, background .2s;
@@ -276,6 +276,15 @@
   .checkbox-lg{width:22px; height:22px; border-radius:7px; border:2px solid var(--gold); flex-shrink:0; position:relative; margin-top:2px; transition:background .2s;}
   .checkbox-lg.checked{background:var(--gold);}
   .checkbox-lg.checked::after{content:''; position:absolute; left:4px; top:1px; width:6px; height:11px; border:solid #241d08; border-width:0 2px 2px 0; transform:rotate(45deg);}
+
+  .body-data-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .field-group{display:flex; flex-direction:column; gap:7px;}
+  .field-label{font-size:12px; color:var(--gold-soft); font-weight:700; padding-right:3px; display:flex; align-items:center; gap:6px;}
+  .field-label::before{content:''; width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0;}
+  .input-unit-wrap{display:flex; align-items:center; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.16); border-radius:14px; overflow:hidden; transition:border-color .2s, background .2s;}
+  .input-unit-wrap:focus-within{border-color:var(--gold); background:rgba(255,255,255,.08);}
+  .input-unit-wrap input{flex:1; min-width:0; background:transparent !important; border:none !important; padding:13px 14px; color:var(--cream); font-family:inherit; font-size:15px; outline:none;}
+  .input-unit-wrap .unit{padding:0 12px; font-size:11px; color:var(--cream-dim); border-right:1px solid rgba(255,255,255,.12); white-space:nowrap; align-self:stretch; display:flex; align-items:center;}
 </style>
 </head>
 <body>
@@ -505,6 +514,13 @@ const STEPS = [
   { key: "clubIntro", type: "clubIntro" },
   { key: "personalInfo", type: "personalInfo", question: "می‌خواهید این نتیجه را با شرایط واقعی خودتان دقیق‌تر بررسی کنیم؟",
     sub: "این اطلاعات فقط برای هماهنگی تیم ما با شما استفاده می‌شود و کاملاً محرمانه می‌ماند." },
+  { key: "contactMethod", type: "single", question: "ترجیح می‌دهید چگونه با شما در ارتباط باشیم؟",
+    options: [
+      { v:"تماس تلفنی", l:"تماس تلفنی" },
+      { v:"پیامک", l:"پیامک" },
+      { v:"واتساپ", l:"واتساپ" },
+      { v:"تلگرام", l:"تلگرام" },
+    ] },
   { key: "bestTime", type: "single", question: "بهترین زمان برای تماس تیم ما با شما چه ساعتی از روز است؟",
     options: [
       { v:"صبح", l:"صبح" }, { v:"ظهر", l:"ظهر" }, { v:"عصر", l:"عصر" }, { v:"شب", l:"شب" },
@@ -703,16 +719,24 @@ function renderPersonalInfo(step){
 
 function renderBodyData(){
   const a = state.answers;
+  const field = (id, label, unit, val) => `
+    <div class="field-group">
+      <label class="field-label">${label}</label>
+      <div class="input-unit-wrap">
+        <input type="number" id="${id}Input" placeholder="عدد را وارد کنید" value="${escapeHtml(val||"")}">
+        <span class="unit">${unit}</span>
+      </div>
+    </div>`;
   return `
     <span class="eyebrow">اختیاری — دقت نتیجه را بیشتر می‌کند</span>
     <h1 class="q">${personName()?`${personName()} عزیز، `:""}اگر مایل بودید، این اعداد را وارد کنید</h1>
     <p class="sub">این بخش کاملاً اختیاری است — می‌توانید بدون تکمیل هم ادامه دهید.</p>
-    <div style="display:flex; flex-direction:column; gap:12px;">
-      <input type="number" id="heightInput" placeholder="قد (سانتی‌متر)" value="${escapeHtml(a.height||"")}">
-      <input type="number" id="weightInput" placeholder="وزن (کیلوگرم)" value="${escapeHtml(a.weight||"")}">
-      <input type="number" id="waistInput" placeholder="دور کمر (سانتی‌متر)" value="${escapeHtml(a.waist||"")}">
-      <input type="number" id="abdomenInput" placeholder="دور شکم (سانتی‌متر)" value="${escapeHtml(a.abdomen||"")}">
-      <input type="number" id="hipInput" placeholder="دور باسن (سانتی‌متر)" value="${escapeHtml(a.hip||"")}">
+    <div class="body-data-grid">
+      ${field("height","قد","سانتی‌متر",a.height)}
+      ${field("weight","وزن","کیلوگرم",a.weight)}
+      ${field("waist","دور کمر","سانتی‌متر",a.waist)}
+      ${field("abdomen","دور شکم","سانتی‌متر",a.abdomen)}
+      ${field("hip","دور باسن","سانتی‌متر",a.hip)}
     </div>
     <div class="nav-row">
       <button class="btn btn-ghost" onclick="goBack()">‹</button>
@@ -1031,7 +1055,7 @@ function renderOffer(record){
           <a class="btn btn-telegram" href="${tgLink}" target="_blank" rel="noopener">گفتگو در تلگرام</a>
           <button class="btn btn-outline" onclick="copySummary(this)">کپی خلاصه گفتگو</button>
         </div>
-        <p class="field-note" style="margin-top:16px;">تیم ما در بازه «${record.bestTime||"زمان مناسب شما"}» با شما تماس خواهد گرفت.</p>
+        <p class="field-note" style="margin-top:16px;">تیم ما از طریق «${record.contactMethod||"روش مناسب شما"}» و در بازه «${record.bestTime||"زمان مناسب شما"}» با شما تماس خواهد گرفت.</p>
       </div>
     </div>
   `;
@@ -1061,6 +1085,7 @@ function buildSummaryText(r){
     `سلام، من ${r.fullName||r.name} هستم.`,
     `پروفایل اصلی: ${p1.title}`,
     `مانع اصلی: ${barrier.label||"-"}`,
+    `روش ارتباط ترجیحی: ${r.contactMethod||"-"}`,
     `بهترین زمان تماس: ${r.bestTime||"-"}`,
     `شماره تماس: ${r.phone||"-"}`,
   ].filter(Boolean).join("\n");
@@ -1119,6 +1144,7 @@ async function sendSubmissionByEmail(record){
     "فعالیت هفتگی": record.activityDays || "-",
     "کیفیت خواب": record.sleepQuality || "-",
     "توان کارهای روزمره": record.dailyCapacity ?? "-",
+    "روش ارتباط ترجیحی": record.contactMethod || "-",
     "بهترین زمان تماس": record.bestTime || "-",
     "زمان ثبت": new Date(record.timestamp).toLocaleString("fa-IR"),
     _template: "table",
