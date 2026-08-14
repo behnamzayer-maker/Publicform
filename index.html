@@ -285,6 +285,11 @@
   .input-unit-wrap:focus-within{border-color:var(--gold); background:rgba(255,255,255,.08);}
   .input-unit-wrap input{flex:1; min-width:0; background:transparent !important; border:none !important; padding:13px 14px; color:var(--cream); font-family:inherit; font-size:15px; outline:none;}
   .input-unit-wrap .unit{padding:0 12px; font-size:11px; color:var(--cream-dim); border-right:1px solid rgba(255,255,255,.12); white-space:nowrap; align-self:stretch; display:flex; align-items:center;}
+
+  .redemption-wrap{display:flex; flex-direction:column; align-items:center; text-align:center; gap:6px; background:rgba(212,175,55,.1); border:1px dashed rgba(212,175,55,.5); border-radius:14px; padding:14px 12px; margin-top:16px;}
+  .redemption-label{font-size:11px; color:var(--cream-dim);}
+  .redemption-code{font-size:22px; font-weight:800; letter-spacing:2px; color:var(--gold-soft); direction:ltr; font-variant-numeric:tabular-nums;}
+  .redemption-hint{font-size:11px; color:var(--cream-dim); line-height:1.8; max-width:280px;}
 </style>
 </head>
 <body>
@@ -402,29 +407,38 @@ function leadBucket(score){
 const STEPS = [
   { key: "welcome", type: "welcome" },
 
-  { key: "experience", type: "multi", maxSelect: 2, question: "این روزها بیشتر با کدام‌یک از این موارد مواجه‌اید؟",
+  { key: "experience", type: "multi", maxSelect: 2, question: "این روزها بیشتر کدام‌ یک را در بدن‌تان حس می‌کنید؟",
     sub: "حداکثر ۲ گزینه انتخاب کنید.",
     options: [
       { v:"energy", l:"کاهش انرژی" },
       { v:"capacity", l:"ضعف یا کاهش توان بدنی" },
-      { v:"mobility", l:"محدودیت حرکتی" },
-      { v:"pain", l:"درد یا ناراحتی حرکتی" },
-      { v:"body", l:"تغییر نامطلوب در ترکیب بدنی" },
-      { v:"posture", l:"وضعیت نامناسب بدن" },
-      { v:"sleep", l:"مشکل در خواب یا ریکاوری" },
+      { v:"mobility", l:"سخت‌تر شدن حرکت بدن" },
+      { v:"pain", l:"درد یا ناراحتی در بدن" },
+      { v:"body", l:"تغییر ناخوشایند در وزن یا فرم بدن" },
+      { v:"posture", l:"نامناسب بودن حالت بدن (قوز، کمر و مانند آن)" },
+      { v:"sleep", l:"مشکل در خواب یا استراحت کافی" },
       { v:"none", l:"مشکل خاصی ندارم" },
     ] },
 
-  { key: "goal", type: "single", question: "مهم‌ترین هدف شما از این مسیر چیست؟",
+  { key: "triggerMoment", type: "single", question: "چه چیزی باعث شد امروز این ارزیابی را شروع کنید؟",
+    options: [
+      { v:"mirror", l:"دیدن خودم در آینه یا یک عکس" },
+      { v:"someone", l:"حرف یا نگرانی یکی از اطرافیانم" },
+      { v:"new_pain", l:"یک درد یا محدودیت جدید" },
+      { v:"doctor", l:"پیشنهاد پزشک یا متخصص" },
+      { v:"time", l:"فقط زمانش رسیده بود" },
+    ] },
+
+  { key: "goal", type: "single", question: "مهم‌ترین چیزی که این روزها دنبالش هستید کدام است؟",
     options: [
       { v:"body_comp", l:"تناسب و ترکیب بدنی" },
-      { v:"capacity", l:"قدرت، استقامت و ظرفیت بدنی" },
-      { v:"movement_quality", l:"کیفیت و آزادی حرکت" },
-      { v:"posture", l:"وضعیت بدن و الگوهای حرکتی" },
-      { v:"energy", l:"انرژی و سرزندگی" },
-      { v:"sleep", l:"خواب و ریکاوری" },
+      { v:"capacity", l:"قدرت و استقامت بدنی" },
+      { v:"movement_quality", l:"حرکت راحت‌تر و بدون محدودیت" },
+      { v:"posture", l:"اصلاح حالت بدن (قوز یا کمر)" },
+      { v:"energy", l:"انرژی و سرزندگی بیشتر" },
+      { v:"sleep", l:"خواب و استراحت بهتر" },
       { v:"habits", l:"عادات سالم روزمره" },
-      { v:"prevention", l:"پیشگیری از افت عملکرد" },
+      { v:"prevention", l:"پیشگیری از افت توانایی در آینده" },
     ] },
 
   { key: "gap", type: "single", question: "فاصله وضعیت فعلی شما تا وضعیت مطلوب‌تان چقدر است؟",
@@ -436,18 +450,26 @@ const STEPS = [
       { v:"unknown", l:"نمی‌دانم" },
     ] },
 
-  { key: "importance", type: "single", question: "این تغییر، این روزها چقدر برایتان اهمیت دارد؟",
+  { key: "importance", type: "single", question: "کدام تغییر، این روزها بیش از پیش برایتان اهمیت دارد؟",
     options: [
       { v:"energy", l:"انرژی و توان بیشتر" },
-      { v:"movement_quality", l:"کیفیت حرکت" },
+      { v:"movement_quality", l:"حرکت بهتر و راحت‌تر" },
       { v:"body_comp", l:"تناسب اندام" },
-      { v:"future_decline", l:"نگرانی از افت توانایی در آینده" },
-      { v:"independence", l:"استقلال بدنی" },
+      { v:"future_decline", l:"نگرانی از توانایی‌ام در آینده" },
+      { v:"independence", l:"انجام کارها بدون کمک گرفتن از دیگران" },
       { v:"habits", l:"عادات سالم" },
       { v:"none", l:"نگرانی خاصی ندارم" },
     ] },
 
-  { key: "impact", type: "rating", scale: 10, question: "وضعیت فعلی چقدر روی کیفیت زندگی روزمره‌تان اثر گذاشته؟",
+  { key: "lossFraming", type: "single", question: "اگر دقیقاً مثل امروز، دو سال دیگر هم همین‌طور ادامه پیدا کند، چه چیزی را بیشتر از همه از دست می‌دهید؟",
+    options: [
+      { v:"energy", l:"انرژی و نشاط روزمره‌ام" },
+      { v:"ability", l:"توانایی انجام کارهایی که دوست دارم" },
+      { v:"confidence", l:"اعتمادبه‌نفسم" },
+      { v:"chance", l:"فرصت برای بهترین نسخه از خودم" },
+    ] },
+
+  { key: "impact", type: "rating", scale: 10, question: "وضعیت فعلی چقدر روی زندگی روزمره‌تان اثر گذاشته؟",
     lowLabel: "تقریباً بی‌تأثیر", highLabel: "تأثیر بسیار زیاد" },
 
   { key: "desiredOutcome", type: "multi", question: "دوست دارید مسیر شما بیشتر چه نتیجه‌ای داشته باشد؟",
@@ -455,11 +477,11 @@ const STEPS = [
     options: [
       { v:"body_comp", l:"بدنی متناسب‌تر" },
       { v:"capacity", l:"قدرت و استقامت بیشتر" },
-      { v:"movement_quality", l:"حرکتی روان‌تر" },
-      { v:"posture", l:"وضعیت بدنی بهتر" },
+      { v:"movement_quality", l:"حرکت راحت‌تر" },
+      { v:"posture", l:"حالت بدن بهتر (رفع قوز/کمر)" },
       { v:"energy", l:"انرژی بیشتر" },
-      { v:"sleep", l:"خواب و ریکاوری بهتر" },
-      { v:"habits", l:"کنترل بهتر سبک زندگی" },
+      { v:"sleep", l:"خواب بهتر" },
+      { v:"habits", l:"عادات روزمره سالم‌تر" },
     ] },
 
   { key: "singleOutcome", type: "single", question: "اگر فقط اجازه داشتید یک نتیجه از این مسیر بگیرید، کدام را انتخاب می‌کنید؟",
@@ -469,7 +491,15 @@ const STEPS = [
       { v:"P", l:"قدرت و استقامت" },
       { v:"M", l:"حرکتی روان‌تر و بدون درد" },
       { v:"L", l:"انرژی و سبک زندگی بهتر" },
-      { v:"W", l:"پیشگیری و حفظ سلامت بلندمدت" },
+      { v:"W", l:"پیشگیری و حفظ سلامتی در آینده" },
+    ] },
+
+  { key: "socialMotivator", type: "single", question: "این تغییر بیشتر برای چه کسی اهمیت دارد؟",
+    options: [
+      { v:"self", l:"برای خودم" },
+      { v:"family", l:"برای خانواده‌ام" },
+      { v:"event", l:"برای یک هدف یا رویداد خاص" },
+      { v:"feeling", l:"برای اینکه دیگر این احساس را نداشته باشم" },
     ] },
 
   { key: "barrier", type: "single", question: "پس چرا هنوز شروع نکرده‌اید؟ بزرگ‌ترین مانع شما چیست؟",
@@ -477,13 +507,13 @@ const STEPS = [
     options: [
       { v:"time", l:"کمبود زمان" },
       { v:"planning", l:"نداشتن برنامه" },
-      { v:"adherence", l:"عدم استمرار در تلاش‌های قبلی" },
+      { v:"adherence", l:"ادامه ندادن تلاش‌های قبلی" },
       { v:"knowledge", l:"ندانستن از کجا شروع کنم" },
       { v:"safety", l:"نگرانی از آسیب‌دیدگی" },
       { v:"experience", l:"تجربه ناموفق قبلی" },
       { v:"cost", l:"هزینه‌ها" },
       { v:"guidance", l:"نبود مربی یا همراه" },
-      { v:"necessity", l:"احساس نکردن ضرورت" },
+      { v:"necessity", l:"هنوز فوریتی حس نمی‌کنم" },
     ] },
 
   { key: "readiness", type: "rating", scale: 10, question: "چقدر برای شروع این مسیر آماده‌اید؟",
@@ -820,7 +850,7 @@ function renderVisualResults(){
     ${hasData ? `<div class="gauge-row">${gaugesHtml}</div>` : `<p class="sub">این نکات کلی، مستقل از اعداد شخصی، همچنان برایتان مفید است:</p>`}
     ${wellnessCards}
     ${generalFacts}
-    <p class="disclaimer-note" style="margin-top:4px;">این اطلاعات جنبه آموزشی دارند و جایگزین ارزیابی تخصصی حضوری نیستند.</p>
+    <p class="disclaimer-note" style="margin-top:4px;">این اطلاعات جنبه آموزشی و خودشناسی دارند و جایگزین ارزیابی تخصصی حضوری نیستند.</p>
     <div class="nav-row">
       <button class="btn btn-ghost" onclick="goBack()">‹</button>
       <button class="btn btn-primary" onclick="goNext()">ادامه</button>
@@ -832,7 +862,7 @@ function renderClubIntro(){
   return `
     <span class="eyebrow">درباره ما</span>
     <h1 class="q">باشگاه تندرستی و مشاوره ورزشی اندیشه طلوع حرکت</h1>
-    <p class="sub" style="line-height:2;">«اندیشه طلوع حرکت» با بیش از ۱۲ سال تجربه میدانی و هزاران ارزیابی حرکتی و فیزیولوژیک، یک باشگاه تندرستی و مشاوره ورزشی است — نه یک باشگاه بدنسازی معمولی. امکانات و خدمات ما شامل:</p>
+    <p class="sub" style="line-height:2;">«اندیشه طلوع حرکت» با بیش از ۱۲ سال تجربه میدانی و هزاران ارزیابی حرکتی و فیزیولوژیک، یک باشگاه تندرستی و مشاوره ورزشی است نه یک باشگاه بدنسازی معمولی. امکانات و خدمات ما شامل:</p>
     <ul class="club-intro-list">${CLUB_SERVICES.map(s=>`<li>${s}</li>`).join("")}</ul>
     <p class="sub" style="line-height:2; margin-top:6px;">مسیر ما بر پایه علم و دانش روز، ظرفیت‌سازی و سازگاری حرکتی با طراحی برنامه‌های اختصاصی، با هدف رساندن شما به بهترین و ایده‌آل‌ترین شرایط شما بنا شده است.</p>
     <div class="optin-row" id="optinRow">
@@ -1018,6 +1048,8 @@ async function submitForm(){
   record.leadScoreValue = computeLeadScore();
   record.leadBucket = leadBucket(record.leadScoreValue);
   record.readinessBucket = readinessBucket(state.answers.readiness ?? 5);
+  record.redemptionCode = "ATH-" + Math.floor(1000 + Math.random()*9000);
+  state.answers.redemptionCode = record.redemptionCode;
 
   sendSubmissionByEmail(record);
   renderOffer(record);
@@ -1045,8 +1077,13 @@ function renderOffer(record){
         <div class="offer-card">
           <h3>${offerText}</h3>
           <p class="pathway-note">${p1.pathway}</p>
+          <div class="redemption-wrap">
+            <span class="redemption-label">کد اختصاصی شما</span>
+            <span class="redemption-code">${record.redemptionCode}</span>
+            <span class="redemption-hint">این کد را هنگام تماس یا پیام به ما اعلام کنید تا این پیشنهاد برایتان فعال شود.</span>
+          </div>
           <div class="countdown-wrap">
-            <span class="countdown-label">اعتبار این پیشنهاد:</span>
+            <span class="countdown-label">اعتبار این کد:</span>
             <span class="countdown-timer" id="countdownTimer">--:--:--</span>
           </div>
         </div>
@@ -1083,6 +1120,7 @@ function buildSummaryText(r){
   const barrier = BARRIERS[r.barrier] || {};
   return [
     `سلام، من ${r.fullName||r.name} هستم.`,
+    `کد اختصاصی: ${r.redemptionCode||"-"}`,
     `پروفایل اصلی: ${p1.title}`,
     `مانع اصلی: ${barrier.label||"-"}`,
     `روش ارتباط ترجیحی: ${r.contactMethod||"-"}`,
@@ -1126,6 +1164,7 @@ async function sendSubmissionByEmail(record){
   const whr = computeWHR();
   const payload = {
     _subject: `سرنخ جدید ATH Assessment — ${record.fullName || record.name || "بدون‌نام"} [${record.leadBucket}]${record.wantsContact?" ★ درخواست تماس":""}`,
+    "کد اختصاصی مشتری": record.redemptionCode || "-",
     "نام": record.fullName || record.name || "-",
     "شماره تماس": record.phone || "-",
     "درخواست صریح تماس از باشگاه": record.wantsContact ? "بله" : "خیر / مشخص نکرده",
